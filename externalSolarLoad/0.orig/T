@@ -1,0 +1,68 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 273;
+
+boundaryField
+{
+    ".*"
+    {
+        	type            externalWallHeatFluxTemperature;
+       	mode           coefficient;
+     	Ta      constant 273;
+	h   constant 10.0;//换热系数
+	thicknesslayers (0.2);
+	kappaLayers  (1.6);
+
+	kappaMethod     fluidThermo;
+	qr      qr;
+	qrRelaxation    0.1;
+	emissivity     0.9;
+	value     $internalField;
+    }
+    maxZ
+    {
+        	type            externalWallHeatFluxTemperature;
+       	mode           coefficient;
+     	Ta         constant 273;
+	h           constant 5.0;//换热系数
+	thicknesslayers (0.01);
+	kappaLayers  (0.8);
+
+	kappaMethod  fluidThermo;
+	qr qr;
+	qrRelaxation 0.1;
+	emissivity 0.9;
+	value $internalField;
+    }
+    minZ
+    {
+                type            externalWallHeatFluxTemperature;
+                mode            coefficient;
+                Ta              uniform 273.0;
+                h               uniform 10;
+                kappaMethod     fluidThermo;
+                kappa           none;
+                thicknessLayers (0.02);//木地板厚度2cm
+                kappaLayers     (0.2);//木地板热传导系数
+                value           uniform 273.0;
+    }
+}
+
+
+// ************************************************************************* //
