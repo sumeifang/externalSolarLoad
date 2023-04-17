@@ -17,12 +17,12 @@ FoamFile
 
 solid_to_air
 {
-type    transparent;
+type       opaqueDiffusive;
     wallAbsorptionEmissionModel
     {
         type            multiBandAbsorption;
-        absorptivity    (0 0);
-        emissivity      (1 1);
+        absorptivity    (0.3 0.7);
+        emissivity      (0.3 0.7);
     };
 }
 

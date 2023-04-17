@@ -54,7 +54,7 @@ boundaryField
     air_to_floor
     {
         type            compressible::turbulentTemperatureRadCoupledMixed;
-        value           uniform 350;
+        value           uniform 300;
         Tnbr            T;
         kappaMethod     fluidThermo;
         qrNbr           none;
@@ -64,10 +64,10 @@ boundaryField
     air_to_solid
     {
         type            compressible::turbulentTemperatureRadCoupledMixed;
-        value           uniform 350;
+        value           uniform 300;
         Tnbr            T;
         kappaMethod     fluidThermo;
-        qrNbr           none;
+        qrNbr           qr;
         qr              qr;
         kappa           none;
     }

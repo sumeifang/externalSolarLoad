@@ -17,23 +17,18 @@ FoamFile
 
 dimensions      [ 0 0 0 1 0 0 0 ];
 
-internalField   uniform 350;
+internalField   uniform 300;
 
 boundaryField
 {
-    solid_to_domain3
-    {
-        type            fixedValue;
-        value           uniform 300;
-    }
     solid_to_air
     {
         type            compressible::turbulentTemperatureRadCoupledMixed;
-        value           uniform 350;
+        value           uniform 300;
         Tnbr            T;
         kappaMethod     fluidThermo;
         qrNbr           qr;
-        qr              none;
+        qr              qr;
         kappa           none;
     }
     solid_to_floor
@@ -43,7 +38,7 @@ boundaryField
         Tnbr            T;
         kappaMethod     fluidThermo;
         qrNbr           none;
-        qr              none;
+        qr              qr;
         kappa           none;
     }
 }

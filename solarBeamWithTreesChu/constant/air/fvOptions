@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v1912                                 |
+|  \\    /   O peration     | Version:  v2012                                 |
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -11,42 +11,18 @@ FoamFile
     format      ascii;
     class       dictionary;
     location    "constant";
-    object      boundaryRadiationProperties;
+    object      fvOptions;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-".*"
+limitT
 {
-    type        transparent;
+    type            limitTemperature;
+    active          yes;
 
-    wallAbsorptionEmissionModel
-    {
-        type            multiBandAbsorption;
-        emissivity      (1 1);
-        absorptivity    (0 0);
-    }
-}
-
-air_to_solid
-{
-type       opaqueDiffusive;
-    wallAbsorptionEmissionModel
-    {
-        type            multiBandAbsorption;
-        absorptivity    (0.3 0.7);
-        emissivity      (0.3 0.7);
-    };
-}
-
-air_to_floor
-{
-    type       opaqueDiffusive;
-    wallAbsorptionEmissionModel
-    {
-        type            multiBandAbsorption;
-        absorptivity    (0.3 0.7);
-        emissivity      (0.3 0.7);
-    };
+    selectionMode   all;
+    min             270;
+    max             460;
 }
 
 // ************************************************************************* //

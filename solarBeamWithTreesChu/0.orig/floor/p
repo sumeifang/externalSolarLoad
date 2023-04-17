@@ -46,11 +46,6 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
-    floor_to_domain3
-    {
-        type            calculated;
-        value           uniform 0;
-    }
     floor_to_air
     {
         type            calculated;

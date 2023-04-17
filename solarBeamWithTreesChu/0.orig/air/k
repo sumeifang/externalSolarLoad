@@ -17,51 +17,49 @@ FoamFile
 
 dimensions      [ 0 2 -2 0 0 0 0 ];
 
-internalField   uniform 0.1;
+internalField   uniform 0.82;// approx k = 1.5*(I*U)^2 ; I = 0.1
 
 boundaryField
 {
     maxY
     {
         type            inletOutlet;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField; 
+        inletValue      $internalField;
     }
     minX
     {
         type            inletOutlet;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField;
+        inletValue      $internalField;
     }
     maxX
     {
         type            inletOutlet;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField;
+        inletValue      $internalField;
     }
     minY
     {
         type            inletOutlet;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField;
+        inletValue      $internalField;
     }
     maxZ
     {
-        type            inletOutlet;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        type            zeroGradient;
     }
     air_to_floor
     {
         type            kqRWallFunction;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField;
+        inletValue      $internalField;
     }
     air_to_solid
     {
         type            kqRWallFunction;
-        value           uniform 0.1;
-        inletValue      uniform 0.1;
+        value           $internalField;
+        inletValue      $internalField;
     }
 }
 

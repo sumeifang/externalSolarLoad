@@ -53,11 +53,6 @@ boundaryField
         kappa           none;
         value           uniform 300;
     }
-    floor_to_domain3
-    {
-        type            zeroGradient;
-        value           uniform 300;
-    }
     floor_to_air
     {
         type            compressible::turbulentTemperatureRadCoupledMixed;

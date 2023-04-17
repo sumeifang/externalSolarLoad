@@ -28,8 +28,7 @@ boundaryField
     }
     minX
     {
-        type            totalPressure;
-        p0              $internalField;
+        type            zeroGradient;
     }
     maxX
     {
@@ -43,8 +42,7 @@ boundaryField
     }
     maxZ
     {
-        type            totalPressure;
-        p0              $internalField;
+        type            zeroGradient;
     }
     air_to_floor
     {
