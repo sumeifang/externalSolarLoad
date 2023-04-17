@@ -1,0 +1,72 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _66908158ae-20221220 OPENFOAM=2212 version=v2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -region solid -subDict dictionaryReplacement
+Date   : Apr 17 2023
+Time   : 19:29:53
+Host   : DESKTOP-RDCRTE6
+PID    : 7235
+I/O    : uncollated
+Case   : /mnt/e/openfoamCase/solarBeamWithTreesChu
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh solid for time = 0
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 2(boundary T)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 2(solid_to_air solid_to_floor)
+Extracted patch groups:
+    group wall with patches 2(solid_to_air solid_to_floor)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 1(solid_to_domain3)
+--> FOAM Warning : 
+    From bool merge(bool, Foam::dictionary&, const Foam::dictionary&, bool, const Foam::HashTable<Foam::List<Foam::word> >&)
+    in file changeDictionary.C at line 304
+    Reading "system/solid/changeDictionaryDict.dictionaryReplacement.boundary" at line 23
+    Ignoring non-existing entry solid_to_domain3
+fieldDict:
+{
+    solid_to_air
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          180;
+        startFace       540;
+        sampleMode      nearestPatchFace;
+        sampleRegion    air;
+        samplePatch     air_to_solid;
+    }
+    solid_to_floor
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          36;
+        startFace       720;
+        sampleMode      nearestPatchFace;
+        sampleRegion    floor;
+        samplePatch     floor_to_solid;
+    }
+}
+
+Writing modified boundary
+Replacing entries in dictionary T
+Loading dictionary T
+Loaded dictionary T with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict T
+
+End
+

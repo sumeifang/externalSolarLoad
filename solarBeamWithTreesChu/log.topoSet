@@ -1,0 +1,64 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _66908158ae-20221220 OPENFOAM=2212 version=v2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : topoSet
+Date   : Apr 17 2023
+Time   : 19:29:51
+Host   : DESKTOP-RDCRTE6
+PID    : 7225
+I/O    : uncollated
+Case   : /mnt/e/openfoamCase/solarBeamWithTreesChu
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet solid
+    Applying source boxToCell
+    Adding cells with centre within boxes 1((15.5 15.5 0) (24.5 24.5 9))
+    cellSet solid now size 216
+Created cellSet floor
+    Applying source boxToCell
+    Adding cells with centre within boxes 1((0 0 -2) (41 41 0))
+    cellSet floor now size 900
+Created cellZoneSet floor
+    Applying source setToCellZone
+    Adding all cells from cellSet floor ...
+    cellZoneSet floor now size 900
+Read set cellSet solid size:216
+    Inverting cellSet
+    cellSet solid now size 40284
+Read set cellSet solid size:40284
+    Applying source cellToCell
+    Removing all elements of cellSet (floor)
+    cellSet solid now size 39384
+Created cellZoneSet air
+    Applying source setToCellZone
+    Adding all cells from cellSet solid ...
+    cellZoneSet air now size 39384
+Created cellSet solidCells
+    Applying source boxToCell
+    Adding cells with centre within boxes 1((15.5 15.5 0) (24.5 24.5 9))
+    cellSet solidCells now size 216
+Created cellZoneSet solid
+    Applying source setToCellZone
+    Adding all cells from cellSet solidCells ...
+    cellZoneSet solid now size 216
+
+End
+
