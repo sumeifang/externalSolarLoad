@@ -1,0 +1,1064 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _66908158ae-20221220 OPENFOAM=2212 version=v2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : chtMultiRegionSimpleFoam
+Date   : Apr 20 2023
+Time   : 19:14:44
+Host   : DESKTOP-RDCRTE6
+PID    : 15781
+I/O    : uncollated
+Case   : /mnt/e/openfoamCase/solarBeamWithTreesChu4
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create fluid mesh for region air for time = 0
+
+Create fluid mesh for region solid for time = 0
+
+Create solid mesh for region floor for time = 0
+
+*** Reading fluid mesh thermophysical properties for region air
+
+    Adding to thermoFluid
+
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+    Adding to rhoFluid
+
+    Adding to UFluid
+
+    Adding to phiFluid
+
+    Adding to hRefFluid
+
+    Adding to ghFluid
+
+    Adding to ghfFluid
+
+    Adding to turbulence
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kEpsilon
+RAS
+{
+    RASModel        kEpsilon;
+    turbulence      on;
+    printCoeffs     on;
+    Cmu             0.09;
+    C1              1.44;
+    C2              1.92;
+    C3              0;
+    sigmak          1;
+    sigmaEps        1.3;
+}
+
+Selecting radiationModel fvDOM
+Selecting absorptionEmissionModel multiBandAbsorptionEmission
+Selecting scatterModel none
+Selecting sootModel none
+fvDOM : Allocated 72 rays with average orientation:
+Sun direction : (0 0 -1)
+
+Sun ray ID : 36
+
+	I0 : dAve : 	(0.002401124 0.0692462 -0.005706852) : omega : 	0.07014893 : d : 	(0.03465435 0.9993994 -8.326673e-17)
+	I1 : dAve : 	(0.01408861 0.06802747 -0.002672793) : omega : 	0.07014893 : d : 	(0.1636751 0.9859455 0.03349365)
+	I2 : dAve : 	(0.0225881 0.06551033 0.005616408) : omega : 	0.07014893 : d : 	(0.2575029 0.9581583 0.125)
+	I3 : dAve : 	(0.02562216 0.06236924 0.01693967) : omega : 	0.07014893 : d : 	(0.2909965 0.9234831 0.25)
+	I4 : dAve : 	(0.02237781 0.05944586 0.02826293) : omega : 	0.07014893 : d : 	(0.2551815 0.8912112 0.375)
+	I5 : dAve : 	(0.01372438 0.0575235 0.03655213) : omega : 	0.07014893 : d : 	(0.1596543 0.8699898 0.4665064)
+	I6 : dAve : 	(0.001980551 0.05711725 0.03958619) : omega : 	0.07014893 : d : 	(0.03001155 0.8655052 0.5)
+	I7 : dAve : 	(-0.009706935 0.05833598 0.03655213) : omega : 	0.07014893 : d : 	(-0.09900924 0.878959 0.4665064)
+	I8 : dAve : 	(-0.01820642 0.06085312 0.02826293) : omega : 	0.07014893 : d : 	(-0.192837 0.9067463 0.375)
+	I9 : dAve : 	(-0.02124048 0.06399421 0.01693967) : omega : 	0.07014893 : d : 	(-0.2263306 0.9414215 0.25)
+	I10 : dAve : 	(-0.01799614 0.06691759 0.005616408) : omega : 	0.07014893 : d : 	(-0.1905156 0.9736934 0.125)
+	I11 : dAve : 	(-0.009342708 0.06883995 -0.002672793) : omega : 	0.07014893 : d : 	(-0.09498845 0.9949148 0.03349365)
+	I12 : dAve : 	(0.005597158 0.1614169 -0.09702036) : omega : 	0.1916505 : d : 	(0.03001155 0.8655052 -0.5)
+	I13 : dAve : 	(0.07315228 0.1543725 -0.07948313) : omega : 	0.1916505 : d : 	(0.3825029 0.8287487 -0.4084936)
+	I14 : dAve : 	(0.1222804 0.1398231 -0.03157051) : omega : 	0.1916505 : d : 	(0.6388451 0.7528325 -0.1584936)
+	I15 : dAve : 	(0.1398176 0.1216672 0.03387933) : omega : 	0.1916505 : d : 	(0.7303514 0.6580981 0.1830127)
+	I16 : dAve : 	(0.1210649 0.1047697 0.09932918) : omega : 	0.1916505 : d : 	(0.6325029 0.5699297 0.5245191)
+	I17 : dAve : 	(0.071047 0.09365818 0.1472418) : omega : 	0.1916505 : d : 	(0.3715179 0.5119518 0.7745191)
+	I18 : dAve : 	(0.003166192 0.09131005 0.164779) : omega : 	0.1916505 : d : 	(0.01732717 0.4996997 0.8660254)
+	I19 : dAve : 	(-0.06438893 0.09835445 0.1472418) : omega : 	0.1916505 : d : 	(-0.3351642 0.5364562 0.7745191)
+	I20 : dAve : 	(-0.113517 0.1129038 0.09932918) : omega : 	0.1916505 : d : 	(-0.5915064 0.6123724 0.5245191)
+	I21 : dAve : 	(-0.1310543 0.1310597 0.03387933) : omega : 	0.1916505 : d : 	(-0.6830127 0.7071068 0.1830127)
+	I22 : dAve : 	(-0.1123015 0.1479572 -0.03157051) : omega : 	0.1916505 : d : 	(-0.5851642 0.7952752 -0.1584936)
+	I23 : dAve : 	(-0.06228365 0.1590687 -0.07948313) : omega : 	0.1916505 : d : 	(-0.3241792 0.8532531 -0.4084936)
+	I24 : dAve : 	(0.004411517 0.1272241 -0.2222132) : omega : 	0.2617994 : d : 	(0.01732717 0.4996997 -0.8660254)
+	I25 : dAve : 	(0.1278343 0.114354 -0.1901728) : omega : 	0.2617994 : d : 	(0.4988393 0.4494894 -0.7410254)
+	I26 : dAve : 	(0.217591 0.08777235 -0.1026368) : omega : 	0.2617994 : d : 	(0.8490092 0.3457858 -0.3995191)
+	I27 : dAve : 	(0.2496314 0.05460168 0.01693967) : omega : 	0.2617994 : d : 	(0.9740092 0.2163763 0.0669873)
+	I28 : dAve : 	(0.2153703 0.02373002 0.1365161) : omega : 	0.2617994 : d : 	(0.8403457 0.09593599 0.5334936)
+	I29 : dAve : 	(0.123988 0.003429419 0.2240521) : omega : 	0.2617994 : d : 	(0.4838335 0.01673677 0.875)
+	I30 : dAve : 	(-2.984158e-05 -0.0008606035 0.2560925) : omega : 	0.2617994 : d : 	(3.885781e-16 3.330669e-16 1)
+	I31 : dAve : 	(-0.1234526 0.01200946 0.2240521) : omega : 	0.2617994 : d : 	(-0.4815121 0.0502103 0.875)
+	I32 : dAve : 	(-0.2132093 0.0385911 0.1365161) : omega : 	0.2617994 : d : 	(-0.8316821 0.1539138 0.5334936)
+	I33 : dAve : 	(-0.2452497 0.07176177 0.01693967) : omega : 	0.2617994 : d : 	(-0.9566821 0.2833234 0.0669873)
+	I34 : dAve : 	(-0.2109886 0.1026334 -0.1026368) : omega : 	0.2617994 : d : 	(-0.8230185 0.4037637 -0.3995191)
+	I35 : dAve : 	(-0.1196063 0.122934 -0.1901728) : omega : 	0.2617994 : d : 	(-0.4665064 0.4829629 -0.7410254)
+	I36 : dAve : 	(2.984158e-05 0.0008606035 -0.2560925) : omega : 	0.2617994 : d : 	(0 2.775558e-17 -1)
+	I37 : dAve : 	(0.1234526 -0.01200946 -0.2240521) : omega : 	0.2617994 : d : 	(0.4815121 -0.0502103 -0.875)
+	I38 : dAve : 	(0.2132093 -0.0385911 -0.1365161) : omega : 	0.2617994 : d : 	(0.8316821 -0.1539138 -0.5334936)
+	I39 : dAve : 	(0.2452497 -0.07176177 -0.01693967) : omega : 	0.2617994 : d : 	(0.9566821 -0.2833234 -0.0669873)
+	I40 : dAve : 	(0.2109886 -0.1026334 0.1026368) : omega : 	0.2617994 : d : 	(0.8230185 -0.4037637 0.3995191)
+	I41 : dAve : 	(0.1196063 -0.122934 0.1901728) : omega : 	0.2617994 : d : 	(0.4665064 -0.4829629 0.7410254)
+	I42 : dAve : 	(-0.004411517 -0.1272241 0.2222132) : omega : 	0.2617994 : d : 	(-0.01732717 -0.4996997 0.8660254)
+	I43 : dAve : 	(-0.1278343 -0.114354 0.1901728) : omega : 	0.2617994 : d : 	(-0.4988393 -0.4494894 0.7410254)
+	I44 : dAve : 	(-0.217591 -0.08777235 0.1026368) : omega : 	0.2617994 : d : 	(-0.8490092 -0.3457858 0.3995191)
+	I45 : dAve : 	(-0.2496314 -0.05460168 -0.01693967) : omega : 	0.2617994 : d : 	(-0.9740092 -0.2163763 -0.0669873)
+	I46 : dAve : 	(-0.2153703 -0.02373002 -0.1365161) : omega : 	0.2617994 : d : 	(-0.8403457 -0.09593599 -0.5334936)
+	I47 : dAve : 	(-0.123988 -0.003429419 -0.2240521) : omega : 	0.2617994 : d : 	(-0.4838335 -0.01673677 -0.875)
+	I48 : dAve : 	(-0.003166192 -0.09131005 -0.164779) : omega : 	0.1916505 : d : 	(-0.01732717 -0.4996997 -0.8660254)
+	I49 : dAve : 	(0.06438893 -0.09835445 -0.1472418) : omega : 	0.1916505 : d : 	(0.3351642 -0.5364562 -0.7745191)
+	I50 : dAve : 	(0.113517 -0.1129038 -0.09932918) : omega : 	0.1916505 : d : 	(0.5915064 -0.6123724 -0.5245191)
+	I51 : dAve : 	(0.1310543 -0.1310597 -0.03387933) : omega : 	0.1916505 : d : 	(0.6830127 -0.7071068 -0.1830127)
+	I52 : dAve : 	(0.1123015 -0.1479572 0.03157051) : omega : 	0.1916505 : d : 	(0.5851642 -0.7952752 0.1584936)
+	I53 : dAve : 	(0.06228365 -0.1590687 0.07948313) : omega : 	0.1916505 : d : 	(0.3241792 -0.8532531 0.4084936)
+	I54 : dAve : 	(-0.005597158 -0.1614169 0.09702036) : omega : 	0.1916505 : d : 	(-0.03001155 -0.8655052 0.5)
+	I55 : dAve : 	(-0.07315228 -0.1543725 0.07948313) : omega : 	0.1916505 : d : 	(-0.3825029 -0.8287487 0.4084936)
+	I56 : dAve : 	(-0.1222804 -0.1398231 0.03157051) : omega : 	0.1916505 : d : 	(-0.6388451 -0.7528325 0.1584936)
+	I57 : dAve : 	(-0.1398176 -0.1216672 -0.03387933) : omega : 	0.1916505 : d : 	(-0.7303514 -0.6580981 -0.1830127)
+	I58 : dAve : 	(-0.1210649 -0.1047697 -0.09932918) : omega : 	0.1916505 : d : 	(-0.6325029 -0.5699297 -0.5245191)
+	I59 : dAve : 	(-0.071047 -0.09365818 -0.1472418) : omega : 	0.1916505 : d : 	(-0.3715179 -0.5119518 -0.7745191)
+	I60 : dAve : 	(-0.001980551 -0.05711725 -0.03958619) : omega : 	0.07014893 : d : 	(-0.03001155 -0.8655052 -0.5)
+	I61 : dAve : 	(0.009706935 -0.05833598 -0.03655213) : omega : 	0.07014893 : d : 	(0.09900924 -0.878959 -0.4665064)
+	I62 : dAve : 	(0.01820642 -0.06085312 -0.02826293) : omega : 	0.07014893 : d : 	(0.192837 -0.9067463 -0.375)
+	I63 : dAve : 	(0.02124048 -0.06399421 -0.01693967) : omega : 	0.07014893 : d : 	(0.2263306 -0.9414215 -0.25)
+	I64 : dAve : 	(0.01799614 -0.06691759 -0.005616408) : omega : 	0.07014893 : d : 	(0.1905156 -0.9736934 -0.125)
+	I65 : dAve : 	(0.009342708 -0.06883995 0.002672793) : omega : 	0.07014893 : d : 	(0.09498845 -0.9949148 -0.03349365)
+	I66 : dAve : 	(-0.002401124 -0.0692462 0.005706852) : omega : 	0.07014893 : d : 	(-0.03465435 -0.9993994 3.885781e-16)
+	I67 : dAve : 	(-0.01408861 -0.06802747 0.002672793) : omega : 	0.07014893 : d : 	(-0.1636751 -0.9859455 -0.03349365)
+	I68 : dAve : 	(-0.0225881 -0.06551033 -0.005616408) : omega : 	0.07014893 : d : 	(-0.2575029 -0.9581583 -0.125)
+	I69 : dAve : 	(-0.02562216 -0.06236924 -0.01693967) : omega : 	0.07014893 : d : 	(-0.2909965 -0.9234831 -0.25)
+	I70 : dAve : 	(-0.02237781 -0.05944586 -0.02826293) : omega : 	0.07014893 : d : 	(-0.2551815 -0.8912112 -0.375)
+	I71 : dAve : 	(-0.01372438 -0.0575235 -0.03655213) : omega : 	0.07014893 : d : 	(-0.1596543 -0.8699898 -0.4665064)
+Total omega : 12.56637
+
+    Adding MRF
+
+No MRF models present
+
+    Adding fvOptions
+
+Creating finite volume options from "constant/fvOptions"
+
+Selecting finite volume options type limitTemperature
+    Source: limitT
+    - selecting all cells
+    - selected 376800 cell(s) with volume 376800
+*** Reading fluid mesh thermophysical properties for region solid
+
+    Adding to thermoFluid
+
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+    Adding to rhoFluid
+
+    Adding to UFluid
+
+    Adding to phiFluid
+
+    Adding to hRefFluid
+
+    Adding to ghFluid
+
+    Adding to ghfFluid
+
+    Adding to turbulence
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kEpsilon
+RAS
+{
+    RASModel        kEpsilon;
+    turbulence      on;
+    printCoeffs     on;
+    Cmu             0.09;
+    C1              1.44;
+    C2              1.92;
+    C3              0;
+    sigmak          1;
+    sigmaEps        1.3;
+}
+
+Selecting radiationModel fvDOM
+Selecting absorptionEmissionModel multiBandAbsorptionEmission
+Selecting scatterModel none
+Selecting sootModel none
+fvDOM : Allocated 72 rays with average orientation:
+Sun direction : (0 0 -1)
+
+Sun ray ID : 36
+
+	I0 : dAve : 	(0.002401124 0.0692462 -0.005706852) : omega : 	0.07014893 : d : 	(0.03465435 0.9993994 -8.326673e-17)
+	I1 : dAve : 	(0.01408861 0.06802747 -0.002672793) : omega : 	0.07014893 : d : 	(0.1636751 0.9859455 0.03349365)
+	I2 : dAve : 	(0.0225881 0.06551033 0.005616408) : omega : 	0.07014893 : d : 	(0.2575029 0.9581583 0.125)
+	I3 : dAve : 	(0.02562216 0.06236924 0.01693967) : omega : 	0.07014893 : d : 	(0.2909965 0.9234831 0.25)
+	I4 : dAve : 	(0.02237781 0.05944586 0.02826293) : omega : 	0.07014893 : d : 	(0.2551815 0.8912112 0.375)
+	I5 : dAve : 	(0.01372438 0.0575235 0.03655213) : omega : 	0.07014893 : d : 	(0.1596543 0.8699898 0.4665064)
+	I6 : dAve : 	(0.001980551 0.05711725 0.03958619) : omega : 	0.07014893 : d : 	(0.03001155 0.8655052 0.5)
+	I7 : dAve : 	(-0.009706935 0.05833598 0.03655213) : omega : 	0.07014893 : d : 	(-0.09900924 0.878959 0.4665064)
+	I8 : dAve : 	(-0.01820642 0.06085312 0.02826293) : omega : 	0.07014893 : d : 	(-0.192837 0.9067463 0.375)
+	I9 : dAve : 	(-0.02124048 0.06399421 0.01693967) : omega : 	0.07014893 : d : 	(-0.2263306 0.9414215 0.25)
+	I10 : dAve : 	(-0.01799614 0.06691759 0.005616408) : omega : 	0.07014893 : d : 	(-0.1905156 0.9736934 0.125)
+	I11 : dAve : 	(-0.009342708 0.06883995 -0.002672793) : omega : 	0.07014893 : d : 	(-0.09498845 0.9949148 0.03349365)
+	I12 : dAve : 	(0.005597158 0.1614169 -0.09702036) : omega : 	0.1916505 : d : 	(0.03001155 0.8655052 -0.5)
+	I13 : dAve : 	(0.07315228 0.1543725 -0.07948313) : omega : 	0.1916505 : d : 	(0.3825029 0.8287487 -0.4084936)
+	I14 : dAve : 	(0.1222804 0.1398231 -0.03157051) : omega : 	0.1916505 : d : 	(0.6388451 0.7528325 -0.1584936)
+	I15 : dAve : 	(0.1398176 0.1216672 0.03387933) : omega : 	0.1916505 : d : 	(0.7303514 0.6580981 0.1830127)
+	I16 : dAve : 	(0.1210649 0.1047697 0.09932918) : omega : 	0.1916505 : d : 	(0.6325029 0.5699297 0.5245191)
+	I17 : dAve : 	(0.071047 0.09365818 0.1472418) : omega : 	0.1916505 : d : 	(0.3715179 0.5119518 0.7745191)
+	I18 : dAve : 	(0.003166192 0.09131005 0.164779) : omega : 	0.1916505 : d : 	(0.01732717 0.4996997 0.8660254)
+	I19 : dAve : 	(-0.06438893 0.09835445 0.1472418) : omega : 	0.1916505 : d : 	(-0.3351642 0.5364562 0.7745191)
+	I20 : dAve : 	(-0.113517 0.1129038 0.09932918) : omega : 	0.1916505 : d : 	(-0.5915064 0.6123724 0.5245191)
+	I21 : dAve : 	(-0.1310543 0.1310597 0.03387933) : omega : 	0.1916505 : d : 	(-0.6830127 0.7071068 0.1830127)
+	I22 : dAve : 	(-0.1123015 0.1479572 -0.03157051) : omega : 	0.1916505 : d : 	(-0.5851642 0.7952752 -0.1584936)
+	I23 : dAve : 	(-0.06228365 0.1590687 -0.07948313) : omega : 	0.1916505 : d : 	(-0.3241792 0.8532531 -0.4084936)
+	I24 : dAve : 	(0.004411517 0.1272241 -0.2222132) : omega : 	0.2617994 : d : 	(0.01732717 0.4996997 -0.8660254)
+	I25 : dAve : 	(0.1278343 0.114354 -0.1901728) : omega : 	0.2617994 : d : 	(0.4988393 0.4494894 -0.7410254)
+	I26 : dAve : 	(0.217591 0.08777235 -0.1026368) : omega : 	0.2617994 : d : 	(0.8490092 0.3457858 -0.3995191)
+	I27 : dAve : 	(0.2496314 0.05460168 0.01693967) : omega : 	0.2617994 : d : 	(0.9740092 0.2163763 0.0669873)
+	I28 : dAve : 	(0.2153703 0.02373002 0.1365161) : omega : 	0.2617994 : d : 	(0.8403457 0.09593599 0.5334936)
+	I29 : dAve : 	(0.123988 0.003429419 0.2240521) : omega : 	0.2617994 : d : 	(0.4838335 0.01673677 0.875)
+	I30 : dAve : 	(-2.984158e-05 -0.0008606035 0.2560925) : omega : 	0.2617994 : d : 	(3.885781e-16 3.330669e-16 1)
+	I31 : dAve : 	(-0.1234526 0.01200946 0.2240521) : omega : 	0.2617994 : d : 	(-0.4815121 0.0502103 0.875)
+	I32 : dAve : 	(-0.2132093 0.0385911 0.1365161) : omega : 	0.2617994 : d : 	(-0.8316821 0.1539138 0.5334936)
+	I33 : dAve : 	(-0.2452497 0.07176177 0.01693967) : omega : 	0.2617994 : d : 	(-0.9566821 0.2833234 0.0669873)
+	I34 : dAve : 	(-0.2109886 0.1026334 -0.1026368) : omega : 	0.2617994 : d : 	(-0.8230185 0.4037637 -0.3995191)
+	I35 : dAve : 	(-0.1196063 0.122934 -0.1901728) : omega : 	0.2617994 : d : 	(-0.4665064 0.4829629 -0.7410254)
+	I36 : dAve : 	(2.984158e-05 0.0008606035 -0.2560925) : omega : 	0.2617994 : d : 	(0 2.775558e-17 -1)
+	I37 : dAve : 	(0.1234526 -0.01200946 -0.2240521) : omega : 	0.2617994 : d : 	(0.4815121 -0.0502103 -0.875)
+	I38 : dAve : 	(0.2132093 -0.0385911 -0.1365161) : omega : 	0.2617994 : d : 	(0.8316821 -0.1539138 -0.5334936)
+	I39 : dAve : 	(0.2452497 -0.07176177 -0.01693967) : omega : 	0.2617994 : d : 	(0.9566821 -0.2833234 -0.0669873)
+	I40 : dAve : 	(0.2109886 -0.1026334 0.1026368) : omega : 	0.2617994 : d : 	(0.8230185 -0.4037637 0.3995191)
+	I41 : dAve : 	(0.1196063 -0.122934 0.1901728) : omega : 	0.2617994 : d : 	(0.4665064 -0.4829629 0.7410254)
+	I42 : dAve : 	(-0.004411517 -0.1272241 0.2222132) : omega : 	0.2617994 : d : 	(-0.01732717 -0.4996997 0.8660254)
+	I43 : dAve : 	(-0.1278343 -0.114354 0.1901728) : omega : 	0.2617994 : d : 	(-0.4988393 -0.4494894 0.7410254)
+	I44 : dAve : 	(-0.217591 -0.08777235 0.1026368) : omega : 	0.2617994 : d : 	(-0.8490092 -0.3457858 0.3995191)
+	I45 : dAve : 	(-0.2496314 -0.05460168 -0.01693967) : omega : 	0.2617994 : d : 	(-0.9740092 -0.2163763 -0.0669873)
+	I46 : dAve : 	(-0.2153703 -0.02373002 -0.1365161) : omega : 	0.2617994 : d : 	(-0.8403457 -0.09593599 -0.5334936)
+	I47 : dAve : 	(-0.123988 -0.003429419 -0.2240521) : omega : 	0.2617994 : d : 	(-0.4838335 -0.01673677 -0.875)
+	I48 : dAve : 	(-0.003166192 -0.09131005 -0.164779) : omega : 	0.1916505 : d : 	(-0.01732717 -0.4996997 -0.8660254)
+	I49 : dAve : 	(0.06438893 -0.09835445 -0.1472418) : omega : 	0.1916505 : d : 	(0.3351642 -0.5364562 -0.7745191)
+	I50 : dAve : 	(0.113517 -0.1129038 -0.09932918) : omega : 	0.1916505 : d : 	(0.5915064 -0.6123724 -0.5245191)
+	I51 : dAve : 	(0.1310543 -0.1310597 -0.03387933) : omega : 	0.1916505 : d : 	(0.6830127 -0.7071068 -0.1830127)
+	I52 : dAve : 	(0.1123015 -0.1479572 0.03157051) : omega : 	0.1916505 : d : 	(0.5851642 -0.7952752 0.1584936)
+	I53 : dAve : 	(0.06228365 -0.1590687 0.07948313) : omega : 	0.1916505 : d : 	(0.3241792 -0.8532531 0.4084936)
+	I54 : dAve : 	(-0.005597158 -0.1614169 0.09702036) : omega : 	0.1916505 : d : 	(-0.03001155 -0.8655052 0.5)
+	I55 : dAve : 	(-0.07315228 -0.1543725 0.07948313) : omega : 	0.1916505 : d : 	(-0.3825029 -0.8287487 0.4084936)
+	I56 : dAve : 	(-0.1222804 -0.1398231 0.03157051) : omega : 	0.1916505 : d : 	(-0.6388451 -0.7528325 0.1584936)
+	I57 : dAve : 	(-0.1398176 -0.1216672 -0.03387933) : omega : 	0.1916505 : d : 	(-0.7303514 -0.6580981 -0.1830127)
+	I58 : dAve : 	(-0.1210649 -0.1047697 -0.09932918) : omega : 	0.1916505 : d : 	(-0.6325029 -0.5699297 -0.5245191)
+	I59 : dAve : 	(-0.071047 -0.09365818 -0.1472418) : omega : 	0.1916505 : d : 	(-0.3715179 -0.5119518 -0.7745191)
+	I60 : dAve : 	(-0.001980551 -0.05711725 -0.03958619) : omega : 	0.07014893 : d : 	(-0.03001155 -0.8655052 -0.5)
+	I61 : dAve : 	(0.009706935 -0.05833598 -0.03655213) : omega : 	0.07014893 : d : 	(0.09900924 -0.878959 -0.4665064)
+	I62 : dAve : 	(0.01820642 -0.06085312 -0.02826293) : omega : 	0.07014893 : d : 	(0.192837 -0.9067463 -0.375)
+	I63 : dAve : 	(0.02124048 -0.06399421 -0.01693967) : omega : 	0.07014893 : d : 	(0.2263306 -0.9414215 -0.25)
+	I64 : dAve : 	(0.01799614 -0.06691759 -0.005616408) : omega : 	0.07014893 : d : 	(0.1905156 -0.9736934 -0.125)
+	I65 : dAve : 	(0.009342708 -0.06883995 0.002672793) : omega : 	0.07014893 : d : 	(0.09498845 -0.9949148 -0.03349365)
+	I66 : dAve : 	(-0.002401124 -0.0692462 0.005706852) : omega : 	0.07014893 : d : 	(-0.03465435 -0.9993994 3.885781e-16)
+	I67 : dAve : 	(-0.01408861 -0.06802747 0.002672793) : omega : 	0.07014893 : d : 	(-0.1636751 -0.9859455 -0.03349365)
+	I68 : dAve : 	(-0.0225881 -0.06551033 -0.005616408) : omega : 	0.07014893 : d : 	(-0.2575029 -0.9581583 -0.125)
+	I69 : dAve : 	(-0.02562216 -0.06236924 -0.01693967) : omega : 	0.07014893 : d : 	(-0.2909965 -0.9234831 -0.25)
+	I70 : dAve : 	(-0.02237781 -0.05944586 -0.02826293) : omega : 	0.07014893 : d : 	(-0.2551815 -0.8912112 -0.375)
+	I71 : dAve : 	(-0.01372438 -0.0575235 -0.03655213) : omega : 	0.07014893 : d : 	(-0.1596543 -0.8699898 -0.4665064)
+Total omega : 12.56637
+
+    Adding MRF
+
+No MRF models present
+
+    Adding fvOptions
+
+*** Reading solid mesh thermophysical properties for region floor
+
+    Adding to thermos
+
+Selecting thermodynamics package 
+{
+    type            heSolidThermo;
+    mixture         pureMixture;
+    transport       constIso;
+    thermo          hConst;
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+    Adding to radiations
+
+Selecting radiationModel none
+    Adding fvOptions
+
+Time = 1
+
+
+Solving for fluid region air
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.008216313, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 1, Final residual = 0.009996106, No Iterations 1
+DILUPBiCGStab:  Solving for Uz, Initial residual = 1, Final residual = 0.0008254941, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 1, Final residual = 0.04947425, No Iterations 1
+limitTemperature limitT Lower limited 0 (0%) of cells, with min limit 270
+limitTemperature limitT Upper limited 0 (0%) of cells, with max limit 460
+limitTemperature limitT Unlimited Tmin 300
+limitTemperature limitT Unlimited Tmax 300
+Radiation solver iter: 0
+Selecting boundary radiation Model: transparent
+Selecting boundary radiation Model: transparent
+Selecting boundary radiation Model: transparent
+Selecting boundary radiation Model: transparent
+Selecting boundary radiation Model: transparent
+Selecting boundary radiation Model: opaqueDiffusive
+Selecting boundary radiation Model: opaqueDiffusive
+GAMG:  Solving for ILambda_0_0, Initial residual = 1, Final residual = 8.387299e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 1, Final residual = 4.515671e-06, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 1, Final residual = 1.973322e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 1, Final residual = 2.139594e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 1, Final residual = 2.282658e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 1, Final residual = 2.434327e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 1, Final residual = 2.131555e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 1, Final residual = 0.0003417181, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 1, Final residual = 0.0008991701, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 1, Final residual = 0.00103694, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 1, Final residual = 0.0007932008, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 1, Final residual = 0.0003176848, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 1, Final residual = 0.004079329, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 1, Final residual = 0.002468856, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 1, Final residual = 0.0002773821, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 1, Final residual = 2.065326e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 1, Final residual = 1.861911e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 1, Final residual = 2.066168e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 1, Final residual = 2.418365e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 1, Final residual = 0.001517226, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 1, Final residual = 0.002330964, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 1, Final residual = 0.002143178, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 1, Final residual = 0.001845498, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 1, Final residual = 0.00277615, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 1, Final residual = 0.004505384, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 1, Final residual = 0.00479925, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 1, Final residual = 0.002188314, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 1, Final residual = 1.905538e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 1, Final residual = 2.239637e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 1, Final residual = 1.846006e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 1, Final residual = 8.551555e-07, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 1, Final residual = 0.002716085, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 1, Final residual = 0.002754594, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 1, Final residual = 0.0009087521, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 1, Final residual = 0.001658276, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 1, Final residual = 0.002868395, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 1, Final residual = 1.823655e-06, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 1, Final residual = 0.003581589, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 1, Final residual = 0.003247766, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 1, Final residual = 0.0006987101, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 1, Final residual = 0.001727421, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 1, Final residual = 0.002640839, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 1, Final residual = 0.003795744, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 1, Final residual = 0.003985532, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 1, Final residual = 0.002070641, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 1, Final residual = 1.799886e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 1, Final residual = 2.034604e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 1, Final residual = 1.765695e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 1, Final residual = 2.536662e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 1, Final residual = 0.001807617, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 1, Final residual = 0.002428026, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 1, Final residual = 0.001772014, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 1, Final residual = 0.002273089, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 1, Final residual = 0.002857539, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 1, Final residual = 0.003576842, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 1, Final residual = 0.002364365, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 1, Final residual = 0.0003945318, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 1, Final residual = 2.579043e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 1, Final residual = 1.906171e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 1, Final residual = 1.858395e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 1, Final residual = 2.011963e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 1, Final residual = 0.0003927647, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 1, Final residual = 0.0009203551, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 1, Final residual = 0.0009223809, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 1, Final residual = 0.0005849968, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 1, Final residual = 0.000263271, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 1, Final residual = 0.0001401009, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 1, Final residual = 6.978257e-06, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 1, Final residual = 1.990332e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 1, Final residual = 2.118595e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 1, Final residual = 2.155754e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 1, Final residual = 2.415006e-16, No Iterations 1
+Radiation solver iter: 1
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.4194675, Final residual = 2.58041e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.4054212, Final residual = 1.158299e-06, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.3920728, Final residual = 1.603484e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.3836994, Final residual = 1.725384e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.3898186, Final residual = 1.868183e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.4089308, Final residual = 2.04639e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.4363672, Final residual = 2.338407e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.4168803, Final residual = 0.0001213459, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.396266, Final residual = 0.0003322436, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.3904785, Final residual = 0.0003953986, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.4001609, Final residual = 0.0003201662, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.4157883, Final residual = 7.65785e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.3597565, Final residual = 0.001040679, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.346253, Final residual = 0.0005896422, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.3608576, Final residual = 2.643551e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.3719659, Final residual = 1.620954e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.3779836, Final residual = 1.125003e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.4209586, Final residual = 1.767433e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.5064793, Final residual = 2.395138e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.4228511, Final residual = 0.0004961986, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.3774193, Final residual = 0.000875543, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.372065, Final residual = 0.0008725158, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.3613723, Final residual = 0.0003399912, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.3491321, Final residual = 0.0006391669, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.3521571, Final residual = 0.001030038, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.3338001, Final residual = 0.001187445, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.3509246, Final residual = 0.0005612633, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.4093115, Final residual = 1.943432e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.4260265, Final residual = 1.844416e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.5078798, Final residual = 1.549514e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.622221, Final residual = 2.043324e-07, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.4972021, Final residual = 0.0009277297, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.4179117, Final residual = 0.001148832, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.4006933, Final residual = 0.0005025797, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.34799, Final residual = 0.0004743383, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.3335984, Final residual = 0.0006514202, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.2279703, Final residual = 1.917162e-07, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.3508594, Final residual = 0.0007845716, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.352071, Final residual = 0.0008081942, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.3933134, Final residual = 0.0003573659, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.3835755, Final residual = 0.0007506125, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.4085023, Final residual = 0.0009317193, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.5005708, Final residual = 0.001300073, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.4087937, Final residual = 0.001385881, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.3889576, Final residual = 0.0009104399, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.4010274, Final residual = 1.751454e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.3555544, Final residual = 1.459807e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.3520464, Final residual = 1.426808e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.3511948, Final residual = 1.773496e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.3354899, Final residual = 0.0003807624, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.3307303, Final residual = 0.0005993725, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.3594339, Final residual = 0.0003467024, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.3729975, Final residual = 0.0008808138, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.3896289, Final residual = 0.0009989524, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.4316161, Final residual = 0.001300038, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.3838742, Final residual = 0.0009364752, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.3717592, Final residual = 0.0002104285, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.3597066, Final residual = 1.665676e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.3311744, Final residual = 1.043547e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.3348599, Final residual = 1.461958e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.355934, Final residual = 1.704023e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.3510073, Final residual = 9.126386e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.3530625, Final residual = 0.0002061629, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.3668717, Final residual = 0.0001751432, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.3914605, Final residual = 0.0001564408, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.4182213, Final residual = 5.755443e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.4323093, Final residual = 8.867616e-05, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.4079254, Final residual = 2.413217e-06, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.3844317, Final residual = 1.816346e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.3624514, Final residual = 1.750655e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.3497288, Final residual = 1.651368e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.3472109, Final residual = 1.681717e-16, No Iterations 1
+Radiation solver iter: 2
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.2281306, Final residual = 2.591337e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.222587, Final residual = 1.087645e-06, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.2168234, Final residual = 1.323623e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.211585, Final residual = 1.586401e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.2130407, Final residual = 1.447202e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.2214367, Final residual = 1.428775e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.2416899, Final residual = 1.737579e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.2254883, Final residual = 5.069856e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.2159535, Final residual = 0.0001036012, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.2139122, Final residual = 0.0001424281, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.219863, Final residual = 0.0001839214, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.2272789, Final residual = 6.784445e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.2033233, Final residual = 0.0008956643, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.189764, Final residual = 0.0006460374, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.1960511, Final residual = 9.310115e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.2077623, Final residual = 1.391438e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.2099186, Final residual = 1.230381e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.2271325, Final residual = 1.486417e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.2806657, Final residual = 2.024969e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.2281436, Final residual = 0.0002546467, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.2101789, Final residual = 0.0002607211, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.2078893, Final residual = 0.0003607588, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.1966947, Final residual = 0.0004571396, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.1912068, Final residual = 0.0006606636, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.2019607, Final residual = 0.0005338921, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.1860184, Final residual = 0.000779406, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.1916416, Final residual = 0.0005805788, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.2245621, Final residual = 1.473831e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.2315122, Final residual = 1.513652e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.2817091, Final residual = 1.533629e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.4831974, Final residual = 3.761572e-07, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.2723223, Final residual = 0.0007827951, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.2259515, Final residual = 0.0004177227, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.220594, Final residual = 0.0001278284, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.1903387, Final residual = 0.0003278005, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.1860027, Final residual = 0.0003482231, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.1408484, Final residual = 1.052232e-07, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.1994214, Final residual = 0.0004065612, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.1948284, Final residual = 0.0006259551, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.2128518, Final residual = 4.599327e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.2115427, Final residual = 0.0001140035, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.2217864, Final residual = 0.0003720131, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.2777559, Final residual = 0.0009571873, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.2220012, Final residual = 0.0006848064, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.2129279, Final residual = 0.0001745988, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.2163858, Final residual = 1.314318e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.1979083, Final residual = 1.218988e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.2019391, Final residual = 1.229527e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.2014407, Final residual = 1.36141e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.1869751, Final residual = 0.0002162784, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.1855232, Final residual = 0.0004650205, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.1952965, Final residual = 0.0004279853, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.2085368, Final residual = 0.0004226392, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.2130601, Final residual = 0.0003852483, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.2391361, Final residual = 0.0006653037, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.2112122, Final residual = 0.0002481879, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.2076497, Final residual = 6.703433e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.1953873, Final residual = 1.232096e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.1856274, Final residual = 1.144588e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.1863908, Final residual = 1.194293e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.2016919, Final residual = 1.4481e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.1944126, Final residual = 7.919064e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.1930615, Final residual = 0.0002205915, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.1976407, Final residual = 0.0002557231, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.2107804, Final residual = 0.0001245346, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.2290039, Final residual = 5.880462e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.2396361, Final residual = 3.65373e-05, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.224284, Final residual = 1.673035e-06, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.2082177, Final residual = 1.399993e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.1958885, Final residual = 1.327675e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.1911158, Final residual = 1.350942e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.1920934, Final residual = 1.36916e-16, No Iterations 1
+Radiation solver iter: 3
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.1700052, Final residual = 2.839908e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.1658548, Final residual = 6.752296e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.1605256, Final residual = 1.461098e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.1549029, Final residual = 1.515743e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.1549172, Final residual = 1.627629e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.1600654, Final residual = 1.695489e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.1751759, Final residual = 1.797418e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.1638457, Final residual = 4.603223e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.1576388, Final residual = 0.0001089758, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.1577593, Final residual = 9.680103e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.16375, Final residual = 9.544307e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.1698097, Final residual = 3.678489e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.1487392, Final residual = 0.00034559, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.1373252, Final residual = 0.0003428272, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.139714, Final residual = 8.767969e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.1467298, Final residual = 1.403525e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.1506703, Final residual = 1.167836e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.163948, Final residual = 1.526484e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.1981873, Final residual = 1.974159e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.1645699, Final residual = 0.000205141, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.1506935, Final residual = 0.0002992634, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.1467026, Final residual = 0.000213762, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.1411444, Final residual = 0.0003706904, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.1391987, Final residual = 0.0003093606, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.1500781, Final residual = 0.0005924656, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.1342205, Final residual = 0.0004970008, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.1396766, Final residual = 0.0003216779, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.167114, Final residual = 1.504315e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.1680441, Final residual = 1.509226e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.1989347, Final residual = 1.480938e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.3405201, Final residual = 1.483091e-07, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.1922882, Final residual = 0.0004180487, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.163876, Final residual = 0.0003612495, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.1640543, Final residual = 0.0001174072, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.1379154, Final residual = 0.0001911072, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.1341692, Final residual = 0.000251978, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.110823, Final residual = 1.416517e-07, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.1480396, Final residual = 0.00047676, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.141707, Final residual = 0.000206192, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.1582572, Final residual = 0.0001053789, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.1518332, Final residual = 0.0002016852, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.1602843, Final residual = 0.0003511355, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.1958617, Final residual = 0.0005844688, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.1602869, Final residual = 0.0005792791, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.1543781, Final residual = 0.000268829, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.1609672, Final residual = 1.458461e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.1440094, Final residual = 1.214587e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.1504656, Final residual = 1.242729e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.1500199, Final residual = 1.43195e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.1348109, Final residual = 0.0001695922, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.134235, Final residual = 0.0002178059, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.1391845, Final residual = 0.0003696789, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.148363, Final residual = 0.0002328908, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.1544397, Final residual = 0.0003639298, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.1744782, Final residual = 0.0005437062, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.1517166, Final residual = 0.0003099648, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.1465819, Final residual = 2.965322e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.1393571, Final residual = 1.361198e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.1341513, Final residual = 1.091772e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.1343877, Final residual = 1.198315e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.1464134, Final residual = 1.445845e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.1416117, Final residual = 2.909809e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.1412537, Final residual = 9.79289e-05, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.146215, Final residual = 0.0001675775, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.1570216, Final residual = 0.0001047561, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.1709462, Final residual = 3.07091e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.1782754, Final residual = 1.743364e-05, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.1670091, Final residual = 1.205329e-06, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.1542838, Final residual = 1.385444e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.1438978, Final residual = 1.429117e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.139497, Final residual = 1.41624e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.1395103, Final residual = 1.408769e-16, No Iterations 1
+Radiation solver iter: 4
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.1308483, Final residual = 2.523246e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.1264307, Final residual = 4.842618e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.1234761, Final residual = 1.387932e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.1216811, Final residual = 1.504405e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.1230006, Final residual = 1.53423e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.1280311, Final residual = 1.684111e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.1379943, Final residual = 1.669304e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.1303446, Final residual = 2.790263e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.1245978, Final residual = 7.648677e-05, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.1229688, Final residual = 7.952631e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.1248516, Final residual = 5.436535e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.1299737, Final residual = 2.487734e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.1178215, Final residual = 0.0004992757, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.109985, Final residual = 0.0002015421, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.1144799, Final residual = 6.395329e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.1201422, Final residual = 1.401441e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.1189465, Final residual = 1.262124e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.1280573, Final residual = 1.453625e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.1558497, Final residual = 1.936375e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.1285863, Final residual = 0.0001092762, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.1189829, Final residual = 0.0002027398, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.1201709, Final residual = 0.0001424415, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.1144012, Final residual = 0.0002361769, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.1106736, Final residual = 0.0002017783, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.1182502, Final residual = 0.0004812803, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.1082788, Final residual = 0.000606749, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.1110592, Final residual = 0.0001769084, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.1271003, Final residual = 1.444336e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.1329568, Final residual = 1.448166e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.1564505, Final residual = 1.58539e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.2655209, Final residual = 1.024057e-07, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.1509153, Final residual = 0.0002151151, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.1304611, Final residual = 0.0002256973, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.1252608, Final residual = 9.216092e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.1104777, Final residual = 0.0001224998, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.1081916, Final residual = 0.0003069145, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.08687919, Final residual = 9.735531e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.1164569, Final residual = 0.0003977107, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.1134894, Final residual = 0.0003375344, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.1211286, Final residual = 0.000106526, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.1216504, Final residual = 0.0001684019, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.1249775, Final residual = 0.000213116, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.1543384, Final residual = 0.0003217312, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.1249298, Final residual = 0.000319065, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.1229358, Final residual = 0.0002211974, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.1228173, Final residual = 1.398044e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.1150317, Final residual = 1.250016e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.1182896, Final residual = 1.264712e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.1179532, Final residual = 1.476136e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.1092221, Final residual = 0.0002001802, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.1059768, Final residual = 0.0002185168, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.1140947, Final residual = 0.0002354462, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.1200619, Final residual = 0.0001388878, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.122905, Final residual = 0.0002337454, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.136313, Final residual = 0.0003247757, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.1216191, Final residual = 0.0002321286, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.1200952, Final residual = 2.525204e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.1140894, Final residual = 1.385112e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.1059579, Final residual = 1.184134e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.1089445, Final residual = 1.128619e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.1176749, Final residual = 1.373243e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.1132452, Final residual = 4.051436e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.1118502, Final residual = 6.32325e-05, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.1143258, Final residual = 8.2842e-05, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.1202507, Final residual = 8.587553e-05, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.1307988, Final residual = 2.063337e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.1364368, Final residual = 1.054684e-05, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.1272489, Final residual = 9.725925e-07, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.119068, Final residual = 1.467468e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.1134119, Final residual = 1.405874e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.1107244, Final residual = 1.358384e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.111666, Final residual = 1.406472e-16, No Iterations 1
+Radiation solver iter: 5
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.1077969, Final residual = 2.049196e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.1048102, Final residual = 4.431721e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.102415, Final residual = 1.361245e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.1002046, Final residual = 1.448515e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.1005055, Final residual = 1.548391e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.104406, Final residual = 1.612778e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.1132997, Final residual = 1.714982e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.1069519, Final residual = 1.611875e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.1023158, Final residual = 5.02916e-05, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.1017849, Final residual = 6.609944e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.1040902, Final residual = 4.169142e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.1069996, Final residual = 2.210725e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.09818968, Final residual = 0.0004652123, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.09016277, Final residual = 0.0002839647, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.09389627, Final residual = 4.369407e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.0985324, Final residual = 1.386951e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.1009199, Final residual = 1.262848e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.1075099, Final residual = 1.458092e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.1308124, Final residual = 1.872622e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.1081596, Final residual = 7.156233e-05, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.1009477, Final residual = 0.0001191347, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.09851555, Final residual = 0.0001216788, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.09396843, Final residual = 0.000157663, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.09105357, Final residual = 0.0002400333, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.09898002, Final residual = 0.0003465415, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.09056984, Final residual = 0.0004741138, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.09093185, Final residual = 0.0002654388, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.1059319, Final residual = 1.328447e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.1095383, Final residual = 1.368627e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.131312, Final residual = 1.60914e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.21986, Final residual = 8.09299e-08, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.1270346, Final residual = 0.0001677082, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.1067806, Final residual = 0.0001318408, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.1042496, Final residual = 6.641231e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.09007481, Final residual = 0.0001485886, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.09066569, Final residual = 0.0002435746, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.07247162, Final residual = 6.454061e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.09765657, Final residual = 0.0002813922, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.09446695, Final residual = 0.0003560452, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.1010713, Final residual = 8.975057e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.09921573, Final residual = 0.0001146439, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.1053223, Final residual = 0.0001294887, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.129332, Final residual = 0.0002294496, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.1053561, Final residual = 0.0002233912, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.1001757, Final residual = 0.0001487451, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.1026104, Final residual = 1.362097e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.09575775, Final residual = 1.209829e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.09931139, Final residual = 1.242138e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.09900304, Final residual = 1.515676e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.0908029, Final residual = 0.0001482051, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.09092922, Final residual = 0.0002335682, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.09363613, Final residual = 0.0001483043, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.09846342, Final residual = 0.000122214, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.1002267, Final residual = 0.0001526396, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.1125122, Final residual = 0.000210416, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.09921084, Final residual = 0.0001511629, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.09839497, Final residual = 2.767553e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.09359725, Final residual = 1.368142e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.09080437, Final residual = 1.161998e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.09037134, Final residual = 1.174679e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.09714211, Final residual = 1.457666e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.09439593, Final residual = 4.003994e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.09238767, Final residual = 8.45913e-05, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.09463685, Final residual = 5.287555e-05, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.1005771, Final residual = 7.532248e-05, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.1075897, Final residual = 1.853142e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.1118721, Final residual = 9.615658e-06, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.1054212, Final residual = 8.705488e-07, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.09907808, Final residual = 1.50425e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.09332963, Final residual = 1.441599e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.09100368, Final residual = 1.403577e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.09281573, Final residual = 1.458454e-16, No Iterations 1
+Radiation solver iter: 6
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.09276784, Final residual = 1.543142e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.09007247, Final residual = 4.02837e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.0882946, Final residual = 1.55699e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.08632406, Final residual = 1.547651e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.08700274, Final residual = 1.542767e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.09055973, Final residual = 1.698605e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.09721332, Final residual = 1.850646e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.09211313, Final residual = 1.324116e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.08799558, Final residual = 3.364561e-05, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.08675628, Final residual = 5.222459e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.08916091, Final residual = 3.725964e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.09199925, Final residual = 1.846055e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.08328735, Final residual = 0.0003457548, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.07934356, Final residual = 0.0002739884, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.08046975, Final residual = 3.020707e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.08438234, Final residual = 1.418157e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.08586199, Final residual = 1.279498e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.09331538, Final residual = 1.484932e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.1121809, Final residual = 2.071313e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.09334295, Final residual = 5.894878e-05, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.08574176, Final residual = 8.130144e-05, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.0844689, Final residual = 0.0001066671, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.08051824, Final residual = 0.0001072429, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.07948641, Final residual = 0.0002316928, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.08417928, Final residual = 0.0002538118, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.07844193, Final residual = 0.0003679078, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.07972602, Final residual = 0.0002617247, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.09098909, Final residual = 1.550115e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.09420824, Final residual = 1.546837e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.1125899, Final residual = 1.627809e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.1895248, Final residual = 5.645671e-08, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.1092204, Final residual = 0.0001422846, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.09218499, Final residual = 0.0001152615, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.08958808, Final residual = 4.90171e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.07960584, Final residual = 0.0001410483, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.07843603, Final residual = 0.0001578327, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.06267984, Final residual = 5.696408e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.08319077, Final residual = 0.0002029582, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.080916, Final residual = 0.0002730996, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.0870591, Final residual = 7.247745e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.08674157, Final residual = 7.151745e-05, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.09146943, Final residual = 0.0001015073, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.1108313, Final residual = 0.0001943814, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.0915312, Final residual = 0.0001781063, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.08717427, Final residual = 9.747193e-05, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.08835907, Final residual = 1.429505e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.08184374, Final residual = 1.299695e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.08446278, Final residual = 1.29099e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.0841894, Final residual = 1.577889e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.07870401, Final residual = 0.0001011151, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.07762774, Final residual = 0.0001979161, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.08028533, Final residual = 9.215364e-05, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.08445055, Final residual = 0.0001157495, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.08704777, Final residual = 0.0001136144, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.09594653, Final residual = 0.0001706105, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.08669874, Final residual = 0.0001038578, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.08437294, Final residual = 2.661024e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.08019344, Final residual = 1.419769e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.07748428, Final residual = 1.208802e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.0788208, Final residual = 1.198362e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.08258785, Final residual = 1.505693e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.08083573, Final residual = 3.070895e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.08002708, Final residual = 8.356869e-05, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.08076529, Final residual = 5.846046e-05, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.08647286, Final residual = 6.1624e-05, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.09242054, Final residual = 1.511786e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.09614941, Final residual = 9.997439e-06, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.0904953, Final residual = 7.907968e-07, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.08569913, Final residual = 1.553784e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.08060849, Final residual = 1.489925e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.07939403, Final residual = 1.456711e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.07995045, Final residual = 1.482897e-16, No Iterations 1
+Radiation solver iter: 7
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.08135726, Final residual = 1.141362e-05, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.07865279, Final residual = 3.644278e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.0772311, Final residual = 1.57579e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.07645606, Final residual = 1.752872e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.07708464, Final residual = 1.794481e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.07974375, Final residual = 1.803016e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.08606334, Final residual = 1.895117e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.08135704, Final residual = 1.151344e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.07775235, Final residual = 2.746481e-05, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.07724195, Final residual = 3.965897e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.07842207, Final residual = 3.466378e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.08043355, Final residual = 1.605459e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.07404331, Final residual = 0.0002924966, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.06952876, Final residual = 0.0002228588, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.07071016, Final residual = 2.118039e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.07412881, Final residual = 1.629227e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.0755604, Final residual = 1.256782e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.08221623, Final residual = 1.504657e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.09929012, Final residual = 2.098452e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.08226713, Final residual = 4.882609e-05, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.07566137, Final residual = 7.328117e-05, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.07413778, Final residual = 9.241264e-05, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.07100812, Final residual = 8.330385e-05, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.07020246, Final residual = 0.0001910879, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.07506407, Final residual = 0.0002242429, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.06879302, Final residual = 0.0002888163, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.07040653, Final residual = 0.0002122943, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.07956181, Final residual = 1.646395e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.0834742, Final residual = 1.572882e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.0996586, Final residual = 1.589509e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.1687929, Final residual = 4.729155e-08, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.09655924, Final residual = 0.0001068643, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.08140673, Final residual = 0.000108136, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.07862543, Final residual = 3.926838e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.06977227, Final residual = 0.000120724, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.06882461, Final residual = 0.000132596, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.05595226, Final residual = 4.410464e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.07409769, Final residual = 0.0001808897, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.07141709, Final residual = 0.0001921903, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.07658458, Final residual = 5.648523e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.07608934, Final residual = 5.293897e-05, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.08026808, Final residual = 8.442825e-05, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.09822224, Final residual = 0.0001541427, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.08019819, Final residual = 0.0001571214, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.07696384, Final residual = 8.242847e-05, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.07746845, Final residual = 1.534944e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.07268232, Final residual = 1.322927e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.07522996, Final residual = 1.379356e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.07501114, Final residual = 1.619108e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.06896946, Final residual = 8.374921e-05, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.06781572, Final residual = 0.0001448965, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.07056929, Final residual = 7.742558e-05, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.07438384, Final residual = 0.000100195, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.07693785, Final residual = 9.041098e-05, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.08512027, Final residual = 0.000149392, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.07603654, Final residual = 9.035382e-05, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.07404682, Final residual = 2.360081e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.07054871, Final residual = 1.571143e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.06779407, Final residual = 1.232219e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.06893318, Final residual = 1.223235e-16, No Iterations 1
+GAMG:  Solving for ILambda_60_0, Initial residual = 0.07358885, Final residual = 1.540477e-16, No Iterations 1
+GAMG:  Solving for ILambda_61_0, Initial residual = 0.07134956, Final residual = 2.316253e-05, No Iterations 1
+GAMG:  Solving for ILambda_62_0, Initial residual = 0.07069945, Final residual = 6.858055e-05, No Iterations 1
+GAMG:  Solving for ILambda_63_0, Initial residual = 0.07187799, Final residual = 6.647789e-05, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.07620313, Final residual = 4.829669e-05, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.08072266, Final residual = 1.292449e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.08420664, Final residual = 9.856669e-06, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.07894727, Final residual = 7.316418e-07, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.07515049, Final residual = 1.723588e-16, No Iterations 1
+GAMG:  Solving for ILambda_69_0, Initial residual = 0.07127394, Final residual = 1.717735e-16, No Iterations 1
+GAMG:  Solving for ILambda_70_0, Initial residual = 0.07029132, Final residual = 1.636279e-16, No Iterations 1
+GAMG:  Solving for ILambda_71_0, Initial residual = 0.0702808, Final residual = 1.5807e-16, No Iterations 1
+Radiation solver iter: 8
+GAMG:  Solving for ILambda_0_0, Initial residual = 0.07276031, Final residual = 8.764638e-06, No Iterations 1
+GAMG:  Solving for ILambda_1_0, Initial residual = 0.07067075, Final residual = 3.43871e-07, No Iterations 1
+GAMG:  Solving for ILambda_2_0, Initial residual = 0.06904059, Final residual = 1.618976e-16, No Iterations 1
+GAMG:  Solving for ILambda_3_0, Initial residual = 0.06805607, Final residual = 1.743749e-16, No Iterations 1
+GAMG:  Solving for ILambda_4_0, Initial residual = 0.06890536, Final residual = 1.815443e-16, No Iterations 1
+GAMG:  Solving for ILambda_5_0, Initial residual = 0.07141482, Final residual = 1.876771e-16, No Iterations 1
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.07703597, Final residual = 1.953047e-16, No Iterations 1
+GAMG:  Solving for ILambda_7_0, Initial residual = 0.07280873, Final residual = 1.015102e-05, No Iterations 1
+GAMG:  Solving for ILambda_8_0, Initial residual = 0.06976648, Final residual = 2.486482e-05, No Iterations 1
+GAMG:  Solving for ILambda_9_0, Initial residual = 0.0689951, Final residual = 2.955272e-05, No Iterations 1
+GAMG:  Solving for ILambda_10_0, Initial residual = 0.07017386, Final residual = 3.274703e-05, No Iterations 1
+GAMG:  Solving for ILambda_11_0, Initial residual = 0.07197311, Final residual = 1.474694e-05, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.06604291, Final residual = 0.0002398863, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.06210917, Final residual = 0.0001822883, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.06361514, Final residual = 1.951168e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.06659837, Final residual = 1.608118e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.06796893, Final residual = 1.438961e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.07415516, Final residual = 1.668684e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.08972787, Final residual = 2.144665e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.07458934, Final residual = 4.085191e-05, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.06803935, Final residual = 6.627718e-05, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.06668227, Final residual = 7.602014e-05, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.06358888, Final residual = 7.539209e-05, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.06247881, Final residual = 0.0001443069, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.06736447, Final residual = 0.0001978635, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.06182728, Final residual = 0.0002408903, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.06269882, Final residual = 0.000170454, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.07147923, Final residual = 1.632117e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.07453936, Final residual = 1.647718e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.09004939, Final residual = 1.639197e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.1541663, Final residual = 3.945307e-08, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.08750893, Final residual = 8.494298e-05, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.07278268, Final residual = 9.078021e-05, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.07020625, Final residual = 3.474242e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.06237295, Final residual = 9.432459e-05, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.06186837, Final residual = 0.0001093176, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.05099064, Final residual = 3.64914e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.0666536, Final residual = 0.0001586966, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.06388442, Final residual = 0.0001683798, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.06855765, Final residual = 4.472373e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.06815892, Final residual = 4.916984e-05, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.07190327, Final residual = 7.158484e-05, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.08861369, Final residual = 0.00012811, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.07202279, Final residual = 0.0001327211, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.06884734, Final residual = 7.212169e-05, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.06975118, Final residual = 1.5767e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.06486969, Final residual = 1.346478e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.06763485, Final residual = 1.430546e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.06742943, Final residual = 1.652165e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.06275655, Final residual = 7.100675e-05, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.06132903, Final residual = 0.0001154874, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.06348899, Final residual = 8.414204e-05, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.06652537, Final residual = 7.958794e-05, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.06893355, Final residual = 7.814192e-05, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.07611264, Final residual = 0.0001303969, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.06830143, Final residual = 7.788188e-05, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.06659157, Final residual = 2.01722e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.0633738, Final residual = 1.568768e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.06121009, Final residual = 1.356659e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.06249388, Final residual = 1.337318e-16, No Iterations 1
+GAMG:  Solving for ILambda_64_0, Initial residual = 0.06827979, Final residual = 3.785539e-05, No Iterations 1
+GAMG:  Solving for ILambda_65_0, Initial residual = 0.07214946, Final residual = 1.163907e-05, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.07535867, Final residual = 9.392856e-06, No Iterations 1
+GAMG:  Solving for ILambda_67_0, Initial residual = 0.07087477, Final residual = 6.890024e-07, No Iterations 1
+GAMG:  Solving for ILambda_68_0, Initial residual = 0.06723484, Final residual = 1.647665e-16, No Iterations 1
+Radiation solver iter: 9
+GAMG:  Solving for ILambda_6_0, Initial residual = 0.07005267, Final residual = 2.004325e-16, No Iterations 1
+GAMG:  Solving for ILambda_12_0, Initial residual = 0.06021821, Final residual = 0.000197823, No Iterations 1
+GAMG:  Solving for ILambda_13_0, Initial residual = 0.05660515, Final residual = 0.0001668257, No Iterations 1
+GAMG:  Solving for ILambda_14_0, Initial residual = 0.0577632, Final residual = 2.610702e-05, No Iterations 1
+GAMG:  Solving for ILambda_15_0, Initial residual = 0.06048003, Final residual = 1.636195e-16, No Iterations 1
+GAMG:  Solving for ILambda_16_0, Initial residual = 0.06189962, Final residual = 1.425945e-16, No Iterations 1
+GAMG:  Solving for ILambda_17_0, Initial residual = 0.06740761, Final residual = 1.650498e-16, No Iterations 1
+GAMG:  Solving for ILambda_18_0, Initial residual = 0.08212809, Final residual = 2.228407e-16, No Iterations 1
+GAMG:  Solving for ILambda_19_0, Initial residual = 0.06777724, Final residual = 3.324504e-05, No Iterations 1
+GAMG:  Solving for ILambda_20_0, Initial residual = 0.06162631, Final residual = 5.692918e-05, No Iterations 1
+GAMG:  Solving for ILambda_21_0, Initial residual = 0.06022932, Final residual = 5.944243e-05, No Iterations 1
+GAMG:  Solving for ILambda_22_0, Initial residual = 0.0579839, Final residual = 8.608464e-05, No Iterations 1
+GAMG:  Solving for ILambda_23_0, Initial residual = 0.05713463, Final residual = 0.0001155262, No Iterations 1
+GAMG:  Solving for ILambda_24_0, Initial residual = 0.06159707, Final residual = 0.0001612413, No Iterations 1
+GAMG:  Solving for ILambda_25_0, Initial residual = 0.05640243, Final residual = 0.0002329769, No Iterations 1
+GAMG:  Solving for ILambda_26_0, Initial residual = 0.05707973, Final residual = 0.0001596747, No Iterations 1
+GAMG:  Solving for ILambda_27_0, Initial residual = 0.06495365, Final residual = 1.603186e-16, No Iterations 1
+GAMG:  Solving for ILambda_28_0, Initial residual = 0.06781013, Final residual = 1.692017e-16, No Iterations 1
+GAMG:  Solving for ILambda_29_0, Initial residual = 0.08243737, Final residual = 1.797098e-16, No Iterations 1
+GAMG:  Solving for ILambda_30_0, Initial residual = 0.1432015, Final residual = 3.356748e-08, No Iterations 1
+GAMG:  Solving for ILambda_31_0, Initial residual = 0.08001177, Final residual = 7.808214e-05, No Iterations 1
+GAMG:  Solving for ILambda_32_0, Initial residual = 0.06642883, Final residual = 7.524302e-05, No Iterations 1
+GAMG:  Solving for ILambda_33_0, Initial residual = 0.06356066, Final residual = 3.452122e-05, No Iterations 1
+GAMG:  Solving for ILambda_34_0, Initial residual = 0.0567437, Final residual = 7.127631e-05, No Iterations 1
+GAMG:  Solving for ILambda_35_0, Initial residual = 0.05646944, Final residual = 9.831807e-05, No Iterations 1
+GAMG:  Solving for ILambda_36_0, Initial residual = 0.04722633, Final residual = 3.153719e-08, No Iterations 1
+GAMG:  Solving for ILambda_37_0, Initial residual = 0.06077173, Final residual = 0.0001252964, No Iterations 1
+GAMG:  Solving for ILambda_38_0, Initial residual = 0.05824332, Final residual = 0.0001438521, No Iterations 1
+GAMG:  Solving for ILambda_39_0, Initial residual = 0.06216286, Final residual = 3.855395e-05, No Iterations 1
+GAMG:  Solving for ILambda_40_0, Initial residual = 0.06201906, Final residual = 4.484208e-05, No Iterations 1
+GAMG:  Solving for ILambda_41_0, Initial residual = 0.06607004, Final residual = 6.025986e-05, No Iterations 1
+GAMG:  Solving for ILambda_42_0, Initial residual = 0.08118513, Final residual = 0.0001154208, No Iterations 1
+GAMG:  Solving for ILambda_43_0, Initial residual = 0.06597948, Final residual = 0.0001076929, No Iterations 1
+GAMG:  Solving for ILambda_44_0, Initial residual = 0.06254669, Final residual = 6.44498e-05, No Iterations 1
+GAMG:  Solving for ILambda_45_0, Initial residual = 0.06344336, Final residual = 1.647627e-16, No Iterations 1
+GAMG:  Solving for ILambda_46_0, Initial residual = 0.0590974, Final residual = 1.440718e-16, No Iterations 1
+GAMG:  Solving for ILambda_47_0, Initial residual = 0.06179331, Final residual = 1.505049e-16, No Iterations 1
+GAMG:  Solving for ILambda_48_0, Initial residual = 0.06159604, Final residual = 1.801417e-16, No Iterations 1
+GAMG:  Solving for ILambda_49_0, Initial residual = 0.05680218, Final residual = 6.481151e-05, No Iterations 1
+GAMG:  Solving for ILambda_50_0, Initial residual = 0.055559, Final residual = 0.0001047422, No Iterations 1
+GAMG:  Solving for ILambda_51_0, Initial residual = 0.05737424, Final residual = 9.120964e-05, No Iterations 1
+GAMG:  Solving for ILambda_52_0, Initial residual = 0.06064371, Final residual = 6.433834e-05, No Iterations 1
+GAMG:  Solving for ILambda_53_0, Initial residual = 0.06261931, Final residual = 6.933711e-05, No Iterations 1
+GAMG:  Solving for ILambda_54_0, Initial residual = 0.06930439, Final residual = 0.0001136966, No Iterations 1
+GAMG:  Solving for ILambda_55_0, Initial residual = 0.06197906, Final residual = 6.963387e-05, No Iterations 1
+GAMG:  Solving for ILambda_56_0, Initial residual = 0.06043627, Final residual = 1.688931e-05, No Iterations 1
+GAMG:  Solving for ILambda_57_0, Initial residual = 0.05753299, Final residual = 1.593172e-16, No Iterations 1
+GAMG:  Solving for ILambda_58_0, Initial residual = 0.05562725, Final residual = 1.38379e-16, No Iterations 1
+GAMG:  Solving for ILambda_59_0, Initial residual = 0.05656448, Final residual = 1.350048e-16, No Iterations 1
+GAMG:  Solving for ILambda_66_0, Initial residual = 0.06868288, Final residual = 8.716219e-06, No Iterations 1
+Min/max T:299.8913 300.109
+DICPCG:  Solving for p_rgh, Initial residual = 0.7055627, Final residual = 0.006929582, No Iterations 47
+time step continuity errors : sum local = 0.002827995, global = 0.0001216916, cumulative = 0.0001216916
+Min/max rho:1.158328 1.158917
+DILUPBiCGStab:  Solving for epsilon, Initial residual = 0.06014322, Final residual = 0.00554009, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 1, Final residual = 0.01717353, No Iterations 1
+
+Solving for fluid region solid
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.01217472, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 1, Final residual = 0.01224966, No Iterations 1
+DILUPBiCGStab:  Solving for Uz, Initial residual = 1, Final residual = 0.01107991, No Iterations 1
+
+
+--> FOAM FATAL ERROR: (openfoam-2212)
+Supply either a patchName or a coupleGroup for patch glass in region solid
+
+
+    From const Foam::word& Foam::mappedPatchBase::samplePatch() const
+    in file mappedPatches/mappedPolyPatch/mappedPatchBaseI.H at line 74.
+
+FOAM exiting
+

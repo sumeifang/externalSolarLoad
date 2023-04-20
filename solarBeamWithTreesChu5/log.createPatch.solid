@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _66908158ae-20221220 OPENFOAM=2212 version=v2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : createPatch -region solid -overwrite
+Date   : Apr 20 2023
+Time   : 19:14:40
+Host   : DESKTOP-RDCRTE6
+PID    : 15773
+I/O    : uncollated
+Case   : /mnt/e/openfoamCase/solarBeamWithTreesChu4
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading "system/createPatchDict"
+
+
+
+Adding patches to mesh solid
+
+Adding new patch glass from 
+{
+    type            mappedPatch;
+    sampleMode      nearestPatchFace;
+    nFaces          0;
+    startFace       0;
+}
+
+Adding new patch walls from 
+{
+    type            mappedPatch;
+    sampleMode      nearestPatchFace;
+    nFaces          0;
+    startFace       0;
+}
+
+Adding new patch floor1 from 
+{
+    type            mappedPatch;
+    sampleMode      nearestPatchFace;
+    nFaces          0;
+    startFace       0;
+}
+
+
+
+
+Repatching mesh solid
+
+Read 64 faces from faceSet glass
+Read 320 faces from faceSet walls
+Read 64 faces from faceSet floor1
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+
+
+Writing repatched mesh solid to 0
+
+End
+
