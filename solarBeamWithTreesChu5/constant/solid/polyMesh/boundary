@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/solid/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+5
+(
+    solid_to_air
+    {
+        type            mappedWall;
+        inGroups        2(wall mappedPatch);
+        nFaces          36;
+        startFace       2140;
+        sampleMode      nearestPatchFace;
+        sampleRegion    air;
+        samplePatch     air_to_solid;
+    }
+    solid_to_floor
+    {
+        type            mappedWall;
+        inGroups        2(wall mappedPatch);
+        nFaces          36;
+        startFace       2176;
+        sampleMode      nearestPatchFace;
+        sampleRegion    floor;
+        samplePatch     floor_to_solid;
+    }
+    glass
+    {
+        type            mappedPatch;
+        inGroups        1(mappedPatch);
+        nFaces          64;
+        startFace       2212;
+        sampleMode      nearestPatchFace;
+        sampleRegion    solid;
+    }
+    walls
+    {
+        type            mappedPatch;
+        inGroups        1(mappedPatch);
+        nFaces          320;
+        startFace       2276;
+        sampleMode      nearestPatchFace;
+        sampleRegion    solid;
+    }
+    floor1
+    {
+        type            mappedPatch;
+        inGroups        1(mappedPatch);
+        nFaces          64;
+        startFace       2596;
+        sampleMode      nearestPatchFace;
+        sampleRegion    solid;
+    }
+)
+
+// ************************************************************************* //
